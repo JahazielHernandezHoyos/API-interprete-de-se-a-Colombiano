@@ -1,0 +1,4 @@
+python-multipart
+mediapipe
+fastapi
+numpy

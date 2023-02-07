@@ -12,17 +12,33 @@ Esta es una API desarrollada con el fin de:
 
 # 💻 Instalación
 
+Primero como buena practica es crear un entorno virtual de desarrollo para este proyecto, para ello puedes usar el siguiente comando:
+
+```python
+python -m venv venv
+```
+Ahora que ya tienes el entorno virtual creado, puedes activarlo con el siguiente comando:
+
+windows:
+```python
+venv\Scripts\activate
+```
+linux:
+```python
+source venv/bin/activate
+```
+
 Para comenzar simplemente debes clonar este repositorio y ejecutar el siguiente comando para instalar las dependencias necesarias para el proyecto
 
 ```
-pip install -r requirements.txt
+pip install -r requirements.txt --use-pep517
 
 ```
 
 IMPORTANT👀 para la version de Python que se utilizo para este proyecto es la:
 
-## Python 3.11.0
-
+## Python 3.8 🐍
+(a dia de 04/02/2023 tiene errores con Python 3.11.1)
 Por lo que se recomienda utilizar esta versión para evitar problemas con las dependencias aunque se puede trabajar con versiones anteriores o superiores si lo desea en excepción de la 3.6.0 y anteriores.
 
 Ahora que ya tienes las dependencias instaladas, puedes ejecutar el siguiente comando para iniciar el servidor de desarrollo(Estando en la carpeta "app"):

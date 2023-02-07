@@ -48,7 +48,7 @@ uvicorn main:app --reload
 
 ```
 
-y listo! ya tienes el servidor corriendo en [http://localhost:8000/](http://localhost:8000/) 🎉
+y listo! ya tienes el servidor corriendo en [http://localhost:8000/](http://localhost:8000/) 🎉
 
 # 🧱 Estructura
 
@@ -72,7 +72,7 @@ Esta carpeta contiene el archivo "artificial_intelligence_processor.py" que cont
 
 # Cómo funciona 🤔
 
-Cuando un usuario envía una imagen a través de una solicitud POST multipart/form-data al enpoint `/process-image`, la imagen se pasa al módulo processing_images.py, donde se procesa mediante MediaPipe. A continuación, hace la prediccion y estimacion y devuelve la letra a la que se puede estarse interpretando.
+Cuando un usuario envía una imagen a través de una solicitud POST multipart/form-data al enpoint `/process-image`, la imagen se pasa al módulo processing_images.py, donde se procesa mediante MediaPipe. A continuación, hace la prediccion y estimacion y devuelve la letra a la que se puede estarse interpretando el cual es un codigo que esta basado en un antiguo trabajo respecto al tema el cual en su codigo puro de python es: https://github.com/JahazielHernandezHoyos/Traductor-de-lengua-de-se-as-al-espa-ol.
 
 # ❤️ Contribución
 
@@ -84,7 +84,7 @@ Si desea contribuir a este proyecto, ¡sería genial! Puede hacerlo a través de
 
 ¿Cómo procesa las imágenes? Usamos una combinación de bibliotecas de procesamiento de imágenes y código personalizado para procesar las imágenes enviadas por los usuarios con librerias como [mediapipe](https://mediapipe.dev/) y cálculos con numpy para hacer esta interpretación de señas.
 
-¿Qué pasa si tengo un problema con la aplicación? Si tienes algún problema o pregunta, no dudes en abrir una incidencia en este repositorio o enviarnos un correo electrónico a [jahazielhernandezhoyoz@gmail.com](mailto:jahazielhernandezhoyoz@gmail.com). Estaré encantado de ayudarte 🤓.
+¿Qué pasa si tengo un problema con la aplicación? Si tienes algún problema o pregunta, no dudes en abrir una incidencia en este repositorio o enviarnos un correo electrónico a [jahazielhernandezhoyoz@gmail.com](mailto:jahazielhernandezhoyoz@gmail.com). Estaré encantado de ayudarte 🤓.
 
 # 🎉 ¡Gracias por usar este interprete de señas Colombiano!
 

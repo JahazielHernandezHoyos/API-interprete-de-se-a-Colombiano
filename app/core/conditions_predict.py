@@ -14,6 +14,7 @@ def condicionalesLetras(dedos):
         (1, 1, 1, 0, 0, 0): "Y",
         (1, 1, 1, 1, 1, 0): "F",
         (0, 1, 1, 1, 1, 1): "P",
+        (1, 1, 1, 1, 1, 1): " ",
         # (0, 1, 0, 0, 1, 1): "V"
     }
     return letras.get(dedos, dedos)

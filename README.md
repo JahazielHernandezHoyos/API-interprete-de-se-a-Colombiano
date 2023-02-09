@@ -48,7 +48,7 @@ uvicorn main:app --reload
 
 ```
 
-y listo! ya tienes el servidor corriendo en [http://localhost:8000/](http://localhost:8000/) 🎉
+y listo! ya tienes el servidor corriendo en [http://localhost:8000/docs](http://localhost:8000/docs) 🎉
 
 # 🧱 Estructura
 

@@ -76,6 +76,10 @@ Esta carpeta contiene el archivo "artificial_intelligence_processor.py" que cont
 
 Cuando un usuario envía una imagen a través de una solicitud POST multipart/form-data al enpoint `/process-image`, la imagen se pasa al módulo processing_images.py, donde se procesa mediante MediaPipe. A continuación, hace la prediccion y estimacion y devuelve la letra a la que se puede estarse interpretando el cual es un codigo que esta basado en un antiguo trabajo respecto al tema el cual en su codigo puro de python es: https://github.com/JahazielHernandezHoyos/Traductor-de-lengua-de-se-as-al-espa-ol.
 
+Que al final hace un calculo teniendo en cuenta las coordenadas que recibimos de mediapipe que se explican en esta foto:
+![image](https://user-images.githubusercontent.com/48532611/218932010-91493cdc-77de-4752-b56e-da1466586c47.png)
+
+
 # ❤️ Contribución
 
 Si desea contribuir a este proyecto, ¡sería genial! Puede hacerlo a través de pull requests y asegurándose de seguir nuestras pautas de contribución.

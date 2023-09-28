@@ -8,7 +8,6 @@ from app.main import app
 
 client = TestClient(app)
 
-
 def test_call_processing_images_with_valid_image():
     """
     Prueba el endpoint "/processing_images" con una imagen de prueba.

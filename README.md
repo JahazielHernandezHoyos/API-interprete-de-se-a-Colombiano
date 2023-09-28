@@ -33,7 +33,7 @@ source venv/bin/activate
 Para comenzar simplemente debes clonar este repositorio y ejecutar el siguiente comando para instalar las dependencias necesarias para el proyecto
 
 ```
-pip install -r requirements.txt --use-pep517
+pip install -r requirements.txt
 
 ```
 

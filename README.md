@@ -79,11 +79,6 @@ Cuando un usuario envía una imagen a través de una solicitud POST multipart/fo
 Que al final hace un calculo teniendo en cuenta las coordenadas que recibimos de mediapipe que se explican en esta foto:
 ![image](https://user-images.githubusercontent.com/48532611/218932010-91493cdc-77de-4752-b56e-da1466586c47.png)
 
-
-# ❤️ Contribución
-
-Si desea contribuir a este proyecto, ¡sería genial! Puede hacerlo a través de pull requests y asegurándose de seguir nuestras pautas de contribución.
-
 # 💬 Preguntas frecuentes
 
 ¿Qué es FastAPI? FastAPI es una biblioteca Python para crear APIs. Es moderno, rápido y fácil de usar.

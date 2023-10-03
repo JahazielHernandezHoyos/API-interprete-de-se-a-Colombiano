@@ -42,4 +42,4 @@ jobs:
         application_name: interpreteAPI
         environment_name: InterpreteAPI-env
         region: us-east-1
-        version_label: ${{ github.event.before }}
+        version_label: ${{ github.event.before}}

@@ -3,6 +3,7 @@ on:
   push:
     branches:
       - main
+      - main
 
 jobs:
   build:
@@ -10,7 +11,11 @@ jobs:
     steps:
       - name: Checkout source code
         uses: actions/checkout@v2
+      - name: Checkout source code
+        uses: actions/checkout@v2
 
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'
       - name: Generate deployment package
         run: zip -r deploy.zip . -x '*.git*'
 
@@ -27,6 +32,9 @@ jobs:
           wait_for_deployment: true
           version_label: ${{github.run_id}}
 
+      - name: Test server is up
+        id: curl
+        run: curl -s http://interpreteapi-env.eba-ypewu3yn.us-east-1.elasticbeanstalk.com/ || echo "::set-output name=status::failure"
       - name: Test server is up
         id: curl
         run: curl -s http://interpreteapi-env.eba-ypewu3yn.us-east-1.elasticbeanstalk.com/ || echo "::set-output name=status::failure"

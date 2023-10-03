@@ -2,44 +2,38 @@ name: Deploy master
 on:
   push:
     branches:
-    - main
+      - main
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout source code
+        uses: actions/checkout@v2
 
-    - name: Checkout source code
-      uses: actions/checkout@v2
+      - name: Generate deployment package
+        run: zip -r deploy.zip . -x '*.git*'
 
-    - name: Generate deployment package
-      run: zip -r deploy.zip . -x '*.git*'
+      - name: Deploy to EB
+        uses: einaregilsson/beanstalk-deploy@v21
+        with:
+          aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          application_name: interpreteAPI
+          environment_name: InterpreteAPI-env
+          region: us-east-1
+          deployment_package: deploy.zip
+          version_description: ${{ github.SHA }}
+          wait_for_deployment: true
+          version_label: ${{ github.ref }}
 
-    - name: Deploy to EB
-      uses: einaregilsson/beanstalk-deploy@v21
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: interpreteAPI
-        environment_name: InterpreteAPI-env
-        region: us-east-1
-        deployment_package: deploy.zip
-        version_description: ${{github.SHA}}
-        wait_for_deployment: true
-        version_label: ${{github.run_id}}
-        use_existing_version_if_available: true
+      - name: Test server is up
+        id: curl
+        run: curl -s http://interpreteapi-env.eba-ypewu3yn.us-east-1.elasticbeanstalk.com/ || echo "::set-output name=status::failure"
 
-    - name: Test server is up
-      id: curl
-      run: curl -s http://interpreteapi-env.eba-ypewu3yn.us-east-1.elasticbeanstalk.com/ || echo "::set-output name=status::failure"
-
-    - name: Restore previous version in the event of a failure
-      if: steps.curl.outputs.status == 'failure'
-      uses: einaregilsson/beanstalk-deploy@v21
-      with:
-        aws_access_key: ${{ secrets.AWS_ACCESS_KEY_ID }}
-        aws_secret_key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-        application_name: interpreteAPI
-        environment_name: InterpreteAPI-env
-        region: us-east-1
-        version_label: ${{ github.event.before}}
+      - name: Restore previous version in the event of a failure
+        if: steps.curl.outputs.status == 'failure'
+        run: |
+          previous_branch=$(echo ${{ github.ref }} | sed 's/refs\/heads\///')
+          echo "Previous branch: $previous_branch"
+          # Luego, usa $previous_branch como identificador en tu acción de rollback

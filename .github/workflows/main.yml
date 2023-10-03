@@ -26,4 +26,4 @@ jobs:
         deployment_package: deploy.zip
         version_description: ${{github.SHA}}
         wait_for_deployment: true
-        version_label: ${{github.actor}}
+        version_label: ${{github.ref_name	}}

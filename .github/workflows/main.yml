@@ -23,4 +23,5 @@ jobs:
         application_name: interpreteAPI
         environment_name: InterpreteAPI-env
         region: us-east-1
-        deployment_package: deploy.zip
+        version_description: ${{github.SHA}}
+        wait_for_deployment: true

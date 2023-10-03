@@ -1,4 +1,8 @@
-
+from fastapi import FastAPI, File, UploadFile, Request
+from api.endpoints import processing_images, processing_text
+from utils.save_image_temporal import save_in_disk
+from io import BytesIO
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 

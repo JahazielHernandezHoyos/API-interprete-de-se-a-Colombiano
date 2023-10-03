@@ -26,5 +26,5 @@ jobs:
         deployment_package: deploy.zip
         version_description: ${{github.SHA}}
         wait_for_deployment: true
-        version_label: ${{github.ref_name}}
+        version_label: ${{github.event.number}}
         use_existing_version_if_available: true

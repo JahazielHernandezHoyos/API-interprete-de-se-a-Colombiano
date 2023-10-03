@@ -33,7 +33,7 @@ source venv/bin/activate
 Para comenzar simplemente debes clonar este repositorio y ejecutar el siguiente comando para instalar las dependencias necesarias para el proyecto
 
 ```
-pip install -r requirements.txt --use-pep517
+pip install -r requirements.txt
 
 ```
 
@@ -50,7 +50,7 @@ uvicorn main:app --reload
 
 ```
 
-y listo! ya tienes el servidor corriendo en [http://localhost:8000/](http://localhost:8000/) 🎉
+y listo! ya tienes el servidor corriendo en [http://localhost:8000/docs](http://localhost:8000/docs) 🎉
 
 # 🧱 Estructura
 
@@ -74,11 +74,10 @@ Esta carpeta contiene el archivo "artificial_intelligence_processor.py" que cont
 
 # Cómo funciona 🤔
 
-Cuando un usuario envía una imagen a través de una solicitud POST multipart/form-data al enpoint `/process-image`, la imagen se pasa al módulo processing_images.py, donde se procesa mediante MediaPipe. A continuación, hace la prediccion y estimacion y devuelve la letra a la que se puede estarse interpretando.
+Cuando un usuario envía una imagen a través de una solicitud POST multipart/form-data al enpoint `/process-image`, la imagen se pasa al módulo processing_images.py, donde se procesa mediante MediaPipe. A continuación, hace la prediccion y estimacion y devuelve la letra a la que se puede estarse interpretando el cual es un codigo que esta basado en un antiguo trabajo respecto al tema el cual en su codigo puro de python es: https://github.com/JahazielHernandezHoyos/Traductor-de-lengua-de-se-as-al-espa-ol.
 
-# ❤️ Contribución
-
-Si desea contribuir a este proyecto, ¡sería genial! Puede hacerlo a través de pull requests y asegurándose de seguir nuestras pautas de contribución.
+Que al final hace un calculo teniendo en cuenta las coordenadas que recibimos de mediapipe que se explican en esta foto:
+![image](https://user-images.githubusercontent.com/48532611/218932010-91493cdc-77de-4752-b56e-da1466586c47.png)
 
 # 💬 Preguntas frecuentes
 

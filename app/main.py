@@ -22,4 +22,4 @@ app.mount("/static", StaticFiles(directory="utils/abc"), name="static")
 
 @app.get("/")
 async def root():
-    return {"message": "👋🌎 Hola Mundo! ve a /docs :)"}
+    return {"message": "👋🌎 ve a /docs :)"}
